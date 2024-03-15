@@ -1,0 +1,14 @@
+version: '2'
+services:
+  bnpl-oracle:
+    image: quay.io/maksymbilenko/oracle-12c
+    volumes:
+      - ./initdb/BNPL:/docker-entrypoint-initdb.d
+    ports:
+      - 1540:1521
+  router-oracle:
+    image: quay.io/maksymbilenko/oracle-12c
+    volumes:
+      - ./initdb/ROUTER:/docker-entrypoint-initdb.d
+    ports:
+      - 1541:1521
