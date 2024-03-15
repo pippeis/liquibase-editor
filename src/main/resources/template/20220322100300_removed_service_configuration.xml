@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+  <changeSet id="20220322100300-1" author="filippo.giardi">
+    <dropForeignKeyConstraint baseTableName="service_configuration"
+                              constraintName="fk_service_configuration_project_id"/>
+  </changeSet>
+
+  <changeSet id="20220322100300-2" author="filippo.giardi">
+    <dropTable tableName="service_configuration"/>
+  </changeSet>
+
+</databaseChangeLog>

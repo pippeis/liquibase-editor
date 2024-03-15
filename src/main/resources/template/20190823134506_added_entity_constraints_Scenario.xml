@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Scenario.
+    -->
+    <changeSet id="20190823134506-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="project_id"
+                                 baseTableName="scenario"
+                                 constraintName="fk_scenario_project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project"/>
+
+        <addForeignKeyConstraint baseColumnNames="scenario_id"
+                                 baseTableName="scenario_tags"
+                                 constraintName="fk_scenario_tags_scenario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="scenario"/>
+
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="scenario_tags"
+                                 constraintName="fk_scenario_tags_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+        
+    </changeSet>
+</databaseChangeLog>

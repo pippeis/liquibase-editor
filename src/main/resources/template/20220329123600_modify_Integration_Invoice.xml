@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+  <changeSet id="20220329123600-1" author="filippo.giardi">
+    <dropColumn tableName="integration_invoice" columnName="payment_date"/>
+    <modifyDataType tableName="integration_invoice" columnName="insert_date" newDataType="datetime"/>
+    <dropDefaultValue tableName="integration_invoice" columnName="insert_date" columnDataType="datetime"/>
+  </changeSet>
+
+  <changeSet id="20220329123600-2" author="filippo.giardi">
+    <addColumn tableName="integration_invoice">
+      <column name="payment_count" type="integer">
+        <constraints nullable="true"/>
+      </column>
+    </addColumn>
+    <addColumn tableName="integration_invoice">
+      <column name="extras" type="${json.type}">
+        <constraints nullable="true"/>
+      </column>
+    </addColumn>
+  </changeSet>
+
+</databaseChangeLog>
