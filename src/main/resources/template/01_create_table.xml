@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <databaseChangeLog
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
-                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
     <!--
         Added the entity Scenario.
     -->
-    <changeSet id="20190823134506-1" author="filippo.giardi">
-        <createTable tableName="scenario">
-            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+    <changeSet id="20190823134506-1-oracle" author="filippo.giardi">
+        <createTable schemaName="schema" tableName="scenario">
+            <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(255)">
@@ -32,10 +30,7 @@
             <column name="project_id" type="bigint">
                 <constraints nullable="false" />
             </column>
-
-            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-
     </changeSet>
 
     <changeSet id="20190823134506-1-relations" author="filippo.giardi">
@@ -52,7 +47,6 @@
         <addPrimaryKey columnNames="scenario_id, tags_id" tableName="scenario_tags"/>
 
     </changeSet>
-    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 
     <!--
         Load sample data generated with Faker.js

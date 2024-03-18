@@ -5,7 +5,8 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
   <changeSet id="20220421120000-1" author="filippo.giardi">
-    <preConditions onFail="MARK_RAN"><tableExists tableName="nordigen_metadata_money_account"/></preConditions>
+    <preConditions onFail="MARK_RAN">
+      <tableExists tableName="nordigen_metadata_money_account"/></preConditions>
     <dropTable tableName="nordigen_metadata_money_account"/>
   </changeSet>
 
