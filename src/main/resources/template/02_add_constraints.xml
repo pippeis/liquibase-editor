@@ -6,7 +6,7 @@
     <!--
         Added the constraints for entity Scenario.
     -->
-    <changeSet id="20190823134506-2" author="jhipster">
+    <changeSet id="20190823134506-2" author="filippo.giardi">
         
         <addForeignKeyConstraint baseColumnNames="project_id"
                                  baseTableName="scenario"

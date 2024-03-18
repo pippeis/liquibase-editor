@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
 
-  <changeSet id="20230411030000-1" author="luca.cesari">
+  <changeSet id="20230411030000-1" author="filippo.giardi">
     <addColumn tableName="integration_invoice">
       <column name="public_id" type="${uuidType}">
         <constraints nullable="true" />
@@ -13,7 +13,7 @@
     </addColumn>
   </changeSet>
 
-  <changeSet id="20230411030000-2" author="luca.cesari">
+  <changeSet id="20230411030000-2" author="filippo.giardi">
     <preConditions onFail="WARN">
       <and>
         <dbms  type="postgresql"  />
@@ -27,7 +27,7 @@
     </sql>
   </changeSet>
 
-  <changeSet id="20230411030000-3" author="luca.cesari">
+  <changeSet id="20230411030000-3" author="filippo.giardi">
     <dropPrimaryKey
       dropIndex="true"
       tableName="integration_invoice"
@@ -35,7 +35,7 @@
     <addPrimaryKey tableName="integration_invoice" columnNames="public_id" constraintName="integration_invoice_pkey"/>
   </changeSet>
 
-  <changeSet id="20230411030000-4" author="luca.cesari">
+  <changeSet id="20230411030000-4" author="filippo.giardi">
     <dropColumn tableName="integration_invoice" columnName="id"/>
   </changeSet>
 

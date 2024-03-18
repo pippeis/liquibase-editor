@@ -4,12 +4,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
-  <changeSet id="20220421120000-1" author="lc">
+  <changeSet id="20220421120000-1" author="filippo.giardi">
     <preConditions onFail="MARK_RAN"><tableExists tableName="nordigen_metadata_money_account"/></preConditions>
     <dropTable tableName="nordigen_metadata_money_account"/>
   </changeSet>
 
-  <changeSet id="20220421120000-2" author="lc">
+  <changeSet id="20220421120000-2" author="filippo.giardi">
     <preConditions onFail="MARK_RAN"><tableExists tableName="nordigen_metadata"/></preConditions>
     <dropTable tableName="nordigen_metadata"/>
   </changeSet>

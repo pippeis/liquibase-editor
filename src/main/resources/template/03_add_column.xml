@@ -7,7 +7,7 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
 
-  <changeSet id="20200727120000-1" author="lc">
+  <changeSet id="20200727120000-1" author="filippo.giardi">
         <addColumn tableName="project">
             <column name="master_scenario" type="bigint">
                 <constraints nullable="true" />
