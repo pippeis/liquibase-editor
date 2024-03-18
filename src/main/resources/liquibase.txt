@@ -1,0 +1,9 @@
+-- INIT
+liquibase init project
+
+-- UPDATE
+liquibase update
+    --changelog-file=REL_PATH_TO_FILE/db.changelog-master.xml
+    --url=jdbc:oracle:thin:@localhost:1521:xe
+    --username=USERNAME
+    --password=PASSWORD

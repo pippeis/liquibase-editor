@@ -1,0 +1,7 @@
+-- PULL IMAGE
+docker pull quay.io/maksymbilenko/oracle-12c
+-- RUN CONTAINER
+docker run -d -p 1521:1521 --name CONTAINER_NAME -v PATH_TO_DIR:/docker-entrypoint-initdb.d quay.io/maksymbilenko/oracle-12c
+-- DOCKER COMPOSE
+docker-compose -f src/main/docker/docker.yml up
+docker-compose -f src/main/docker/docker.yml down -v
